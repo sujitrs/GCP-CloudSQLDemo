@@ -21,3 +21,5 @@ COPY --from=builder /app/target/*.jar /app.jar
 
 # Run the web service on container startup.
 CMD ["java","-Djava.security.egd=file:/dev/./urandom","-Dserver.port=${PORT}","-jar","/app.jar"]
+
+#gcloud builds submit --tag gcr.io/micros2/helloworld
